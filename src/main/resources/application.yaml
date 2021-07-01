@@ -1,0 +1,7 @@
+
+server:
+  port: 4444
+  servlet:
+    context-path: /mrkt
+
+    # http://localhost:4444/mrkt
