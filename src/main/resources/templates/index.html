@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>MarketProject</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <a class="btn btn-primary" th:href="@{/addcontact}">New contact</a>
+</div>
+
+<div class="container">
+    <h1>Contacts List</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <td>Surname</td>
+            <td>Name</td>
+            <td>MiddleName</td>
+            <td>PhoneNumber</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="c : ${contactsList}">
+            <td th:text="${c.surname}"></td>
+            <td th:text="${c.name}"></td>
+            <td th:text="${c.middleName}"></td>
+            <td th:text="${c.phoneNumber}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
