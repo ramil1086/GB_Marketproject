@@ -21,7 +21,7 @@ public class RepoController {
     }
 
     // http://localhost:4444/mrkt/showrepo
-    @GetMapping("/showrepo")
+    @GetMapping("/")
     public String show(Model model) {
         List<Product> productList = productService.getProductList();
         model.addAttribute("productList", productList);
@@ -45,6 +45,6 @@ public class RepoController {
     @PostMapping("/create_product")
     public String createNewProduct(@RequestParam Long id, @RequestParam String title, @RequestParam String cost) {
         productService.addProduct(new Product(id, title, new BigDecimal(cost)));
-        return "redirect:/showrepo";
+        return "redirect:/";
     }
 }
